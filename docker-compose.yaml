@@ -1,0 +1,8 @@
+version: "3.8"
+services:
+ ansible-controller:
+  container_name: ansible-controller
+  image: jkaninda/rockylinux-ansible:latest
+  command: sleep 1d
+  restart: unless-stopped
+  privileged: true
