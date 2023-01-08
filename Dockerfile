@@ -11,6 +11,8 @@ RUN systemctl mask dev-mqueue.mount dev-hugepages.mount \
 # Install Ansible
 RUN dnf install epel-release -y
 RUN dnf install ansible -y
+RUN dnf clean all
+
 STOPSIGNAL SIGRTMIN+3
 # SSHd setup
 EXPOSE 22
