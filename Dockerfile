@@ -1,7 +1,7 @@
 FROM rockylinux:8.7
 RUN dnf update
 # Set up base packages that are expected
-RUN dnf -y install openssh-server openssh-clients crontabs NetworkManager firewalld selinux-policy
+RUN dnf -y install openssh-server openssh-clients crontabs NetworkManager firewalld selinux-policy ncurses which
 RUN systemctl mask dev-mqueue.mount dev-hugepages.mount \
      systemd-remount-fs.service sys-kernel-config.mount \
      sys-kernel-debug.mount sys-fs-fuse-connections.mount \
