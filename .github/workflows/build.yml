@@ -29,6 +29,6 @@ jobs:
           file: "./Dockerfile"
           push: true
           tags: |
-           "${{env.BUILDKIT_IMAGE}}:8.7"
+           "${{env.BUILDKIT_IMAGE}}:v1.0"
            "${{env.BUILDKIT_IMAGE}}:latest"
      
