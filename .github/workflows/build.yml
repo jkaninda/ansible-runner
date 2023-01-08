@@ -5,7 +5,7 @@ on:
       - main
 
 env:
-  BUILDKIT_IMAGE: jkaninda/rockylinux-ansible
+  BUILDKIT_IMAGE: jkaninda/ansible-runner
 jobs:
   docker:
     runs-on: ubuntu-latest

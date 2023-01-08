@@ -1,8 +1,16 @@
 version: "3.8"
 services:
- ansible-controller:
-  container_name: ansible-controller
-  image: jkaninda/rockylinux-ansible:latest
+ ansible-runner:
+  container_name: ansible-runner
+  image: jkaninda/ansible-runner:latest
+  privileged: true
   command: sleep 1d
   restart: unless-stopped
-  privileged: true
+  volumes:
+    - ./master:/etc/ansible/
+  networks:
+   - ansible
+networks:
+ ansible:
+  external: false
+  name: ansible
