@@ -1,13 +1,42 @@
 version: "3.8"
 services:
- ansible-runner:
-  container_name: ansible-runner
-  image: jkaninda/ansible-runner:latest
+ controller:
+  container_name: controller
+  image: jkaninda/ansible-runner:1.0
+  hostname: controller
   privileged: true
   command: sleep 1d
   restart: unless-stopped
+  ports:
+    - 22:22
   volumes:
-    - ./master:/etc/ansible/
+    - ./master/root:/root/
+  networks:
+   - ansible
+ server1:
+  container_name: server1
+  image: jkaninda/ansible-runner:1.0
+  hostname: server1
+  privileged: true
+  command: sleep 1d
+  restart: unless-stopped
+  expose:
+    - 22
+  volumes:
+    - ./worker/.ssh:/root/.ssh/
+  networks:
+   - ansible
+ server2:
+  container_name: server2
+  hostname: server2
+  image: jkaninda/ansible-runner:1.0
+  privileged: true
+  command: sleep 1d
+  restart: unless-stopped
+  expose:
+    - 22
+  volumes:
+    - ./worker/.ssh:/root/.ssh/
   networks:
    - ansible
 networks:
