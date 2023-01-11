@@ -67,3 +67,7 @@ networks:
 ```sh
 docker-compose exec controller bash
 ```
+
+### Screenshot
+
+<img src="https://raw.githubusercontent.com/jkaninda/ansible-runner/main/Screenshot.png"/>
