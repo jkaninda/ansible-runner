@@ -5,5 +5,5 @@ if [ $# -eq 0 ]
   else
     tag=$1
 fi
- docker build  -t jkaninda/ansible-runner:$tag .
+ docker build -f ./src/docker/Dockerfile  -t jkaninda/ansible-runner:$tag .
  

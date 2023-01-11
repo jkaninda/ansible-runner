@@ -36,7 +36,7 @@ services:
   expose:
     - 22
   volumes:
-    - ./worker/.ssh:/root/.ssh/
+    - ./worker2/.ssh:/root/.ssh/
   networks:
    - ansible
 networks:
