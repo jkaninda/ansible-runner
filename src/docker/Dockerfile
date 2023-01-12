@@ -1,4 +1,4 @@
-FROM rockylinux:8.7
+FROM rockylinux:9.1
 RUN dnf update
 # Set up base packages that are expected
 RUN dnf -y install openssh-server openssh-clients crontabs NetworkManager firewalld selinux-policy ncurses which net-tools
